@@ -24,3 +24,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
+          tags: |
+            ghcr.io/birdiecare/helm-eks-image:latest
