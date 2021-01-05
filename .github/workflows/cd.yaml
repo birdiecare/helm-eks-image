@@ -25,7 +25,7 @@ jobs:
         with:
           registry: ghcr.io
           username: birdiecare
-          password: ${{ secrets.GH_ACCESS_TOKEN }}
+          password: ${{ secrets.GH_REGISTRY_TOKEN }}
       -
         name: Build and push
         uses: docker/build-push-action@v2
