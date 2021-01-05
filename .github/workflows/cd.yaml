@@ -24,7 +24,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: airwalk225
           password: ${{ secrets.RYAN_CPAT }}
       -
         name: Build and push
@@ -34,4 +34,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ghcr.io/birdiecare/helm-eks-image:latest
+            ghcr.io/airwalk225/helm-eks-image:latest
