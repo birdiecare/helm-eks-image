@@ -24,7 +24,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: birdie-ci
+          username: birdiecare
           password: ${{ secrets.GH_ACCESS_TOKEN }}
       -
         name: Build and push
