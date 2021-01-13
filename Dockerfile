@@ -24,17 +24,21 @@ RUN curl -s "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-$AWSCLI_VERSIO
     ./aws/install
 
 RUN curl -LOs "https://storage.googleapis.com/kubernetes-release/release/v$KUBECTL_VERSION/bin/linux/amd64/kubectl" && \
- 	  chmod +x ./kubectl && \
- 	  mv ./kubectl /usr/local/bin/kubectl
+     chmod +x ./kubectl && \
+     mv ./kubectl /usr/local/bin/kubectl
 
 RUN wget "https://get.helm.sh/helm-v$HELM_VERSION-linux-amd64.tar.gz" -q && \
-	  tar -zxvf helm-v$HELM_VERSION-linux-amd64.tar.gz && \
-	  mv linux-amd64/helm /usr/local/bin/helm && \
-		chmod +x /usr/local/bin/helm
+    tar -zxvf helm-v$HELM_VERSION-linux-amd64.tar.gz && \
+    mv linux-amd64/helm /usr/local/bin/helm && \
+    chmod +x /usr/local/bin/helm
 
 RUN curl -sL "https://github.com/mozilla/sops/releases/download/v$SOPS_VERSION/sops-v$SOPS_VERSION.linux" > sops && \
     chmod +x sops && \
     mv sops /usr/local/bin/sops
+
+RUN wget https://github.com/lrills/helm-unittest/releases/download/v0.1.5/helm-unittest-linux-0.1.5.tgz && \
+    mkdir -p ${HOME}/.local/share/helm/plugins/unittest && \
+    tar xzf helm-unittest-linux-0.1.5.tgz -C ${HOME}/.local/share/helm/plugins/unittest
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
