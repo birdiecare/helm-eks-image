@@ -36,7 +36,8 @@ RUN curl -sL "https://github.com/mozilla/sops/releases/download/v$SOPS_VERSION/s
     chmod +x sops && \
     mv sops /usr/local/bin/sops
 
-RUN wget https://github.com/lrills/helm-unittest/releases/download/v0.1.5/helm-unittest-linux-0.1.5.tgz && \
+RUN helm plugin install https://github.com/jkroepke/helm-secrets --version v3.4.0 && \
+    wget https://github.com/lrills/helm-unittest/releases/download/v0.1.5/helm-unittest-linux-0.1.5.tgz && \
     mkdir -p ${HOME}/.local/share/helm/plugins/unittest && \
     tar xzf helm-unittest-linux-0.1.5.tgz -C ${HOME}/.local/share/helm/plugins/unittest
 
