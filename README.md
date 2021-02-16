@@ -11,9 +11,9 @@ Versions can be configured using build args
 
 | Arg             | Default  |
 |-----------------|----------|
-| AWS_CLI_VERSION | "2.0.59" |
-| KUBECTL_VERSION | "1.19.3" |
-| HELM_VERSION    | "3.4.2"  |
+| AWS_CLI_VERSION | "2.1.26" |
+| KUBECTL_VERSION | "1.20.2" |
+| HELM_VERSION    | "3.5.0"  |
 | SOPS_VERSION    | "3.6.1"  |
 
 It accepts 3 environment variables
