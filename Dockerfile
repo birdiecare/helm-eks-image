@@ -19,6 +19,8 @@ RUN curl -LOs "https://storage.googleapis.com/kubernetes-release/release/v$KUBEC
  	  chmod +x ./kubectl && \
  	  mv ./kubectl /usr/local/bin/kubectl
 
+RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
+
 RUN wget "https://get.helm.sh/helm-v$HELM_VERSION-linux-amd64.tar.gz" -q && \
 	  tar -zxvf helm-v$HELM_VERSION-linux-amd64.tar.gz && \
 	  mv linux-amd64/helm /usr/local/bin/helm && \
